@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TrackingIntegration.Models
 {
@@ -16,6 +17,6 @@ namespace TrackingIntegration.Models
         public string City { get; set; }
         public string State { get; set; }
         public string Description { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

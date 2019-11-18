@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -73,7 +74,8 @@ namespace TrackingIntegration.Clients
                                     City = item["city"].ToString(),
                                     State = item["state"].ToString(),
                                     Description = item["description"].ToString(),
-                                    Date = item["date"].ToString(),
+                                    Date = DateTime.Parse(item["date"].ToString())
+                                    // DateTime.ParseExact(item["date"].ToString(), "dd-MM-yyyy HH:mm:ss", CultureInfo.InvariantCulture),
                                 });
 
                                 if (item["delivered"].ToObject<bool>())
